@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: confitalk/confitalk-website
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title (PL)", name: "title_pl", widget: "string"}
+      - {label: "Title (EN)", name: "title_en", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Slug (URL)", name: "slug", widget: "string", hint: "e.g. jak-przygotowac-sie-do-ielts"}
+      - {label: "Description (PL)", name: "desc_pl", widget: "text"}
+      - {label: "Description (EN)", name: "desc_en", widget: "text"}
+      - {label: "Content (PL)", name: "body_pl", widget: "markdown"}
+      - {label: "Content (EN)", name: "body_en", widget: "markdown"}
