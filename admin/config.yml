@@ -1,7 +1,9 @@
 backend:
-  name: github
+  name: git-gateway
   repo: confitalk/confitalk-website
   branch: main
+  identity_url: https://confitalk.com/.netlify/identity
+  gateway_url: https://confitalk.com/.netlify/git/github
 
 media_folder: "images"
 public_folder: "/images"
