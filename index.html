@@ -157,6 +157,16 @@ section{padding:5rem 1.5rem}
 .cta-sub{font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6}
 footer{background:var(--text);color:rgba(255,255,255,0.6);padding:2rem 1.5rem;text-align:center;font-size:13px}
 footer img{height:36px;margin-bottom:1rem;opacity:0.9;display:block;margin-left:auto;margin-right:auto}
+.pricing-table{margin-top:2rem}
+.rates-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.rates-table thead{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:var(--white)}
+.rates-table th{padding:16px 20px;text-align:left;font-weight:600;font-size:14px;letter-spacing:0.05em}
+.rates-table td{padding:16px 20px;border-bottom:1px solid var(--border);font-size:14px;color:var(--text)}
+.rates-table tbody tr:last-child td{border-bottom:none}
+.rates-table tbody tr:hover{background:var(--teal-pale);transition:background 0.2s}
+.rates-table strong{color:var(--text);font-weight:600}
+.pricing-note ul li{margin-bottom:0.5rem;color:var(--muted)}
+.pricing-note ul li strong{color:var(--text)}
 @media(max-width:768px){
   .hero-inner,.why-grid,.contact-grid,.booking-grid{grid-template-columns:1fr}
   .hero-photo{order:-1}
@@ -166,6 +176,7 @@ footer img{height:36px;margin-bottom:1rem;opacity:0.9;display:block;margin-left:
   .about-stats{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
   .cv-header{grid-template-columns:1fr}
+  .rates-table th,.rates-table td{padding:12px 14px;font-size:12px}
 }
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -338,13 +349,91 @@ footer img{height:36px;margin-bottom:1rem;opacity:0.9;display:block;margin-left:
     <div class="section-label" data-pl="Cennik" data-en="Pricing">Cennik</div>
     <div class="divider"></div>
     <h2 class="section-title" data-pl="Przejrzysty cennik, bez niespodzianek" data-en="Transparent pricing, no surprises">Przejrzysty cennik, bez niespodzianek</h2>
-    <div class="rates-grid">
-      <div class="rate-card"><div class="rate-type" data-pl="Angielski ogólny" data-en="General English">Angielski ogólny</div><div class="rate-price">100–110</div><div class="rate-unit">PLN / godz.</div></div>
-      <div class="rate-card featured"><div class="rate-type" data-pl="IELTS i Cambridge" data-en="IELTS & Cambridge">IELTS i Cambridge</div><div class="rate-price">120–130</div><div class="rate-unit">PLN / godz.</div></div>
-      <div class="rate-card"><div class="rate-type" data-pl="Młodsi uczniowie (7–16)" data-en="Young Learners (7–16)">Młodsi uczniowie (7–16)</div><div class="rate-price">85–90</div><div class="rate-unit">PLN / godz.</div></div>
+    
+    <!-- POLISH PRICING TABLE -->
+    <div id="pricing-pl" class="pricing-table">
+      <table class="rates-table">
+        <thead>
+          <tr>
+            <th>Typ lekcji</th>
+            <th>Cena</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Angielski ogólny dla dorosłych</strong></td>
+            <td>60 PLN / 60 minut</td>
+          </tr>
+          <tr>
+            <td><strong>Angielski dla dzieci i młodzieży</strong></td>
+            <td>60 PLN / 60 minut<br>50 PLN / 45 minut</td>
+          </tr>
+          <tr>
+            <td><strong>Przygotowanie do IELTS i Cambridge</strong></td>
+            <td>80 PLN / 60 minut</td>
+          </tr>
+          <tr>
+            <td><strong>Business English</strong></td>
+            <td>80 PLN / 60 minut</td>
+          </tr>
+          <tr>
+            <td><strong>Lekcja próbna</strong></td>
+            <td>20 PLN / 30 minut</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pricing-note" style="margin-top: 2rem; padding: 1rem; background: rgba(245, 245, 245, 0.8); border-left: 3px solid var(--accent); border-radius: 4px;">
+        <div style="font-weight: 600; margin-bottom: 0.5rem;">Lekcje grupowe</div>
+        <ul style="margin: 0; padding-left: 1.5rem; font-size: 0.95rem;">
+          <li><strong>2 uczniów:</strong> cena pozostaje bez zmian i dzielona jest między dwóch uczestników</li>
+          <li><strong>3 lub więcej uczniów:</strong> dodawane jest 20% do ceny lekcji, a całkowity koszt dzielony jest między wszystkich uczestników</li>
+        </ul>
+      </div>
     </div>
-    <div class="offer-banner" id="offer-pl">🎁 <strong>20% rabatu</strong> przy pakiecie 5 lekcji &nbsp;·&nbsp; <strong>Bezpłatna konsultacja 15 min</strong></div>
-    <div class="offer-banner" id="offer-en" style="display:none">🎁 <strong>20% discount</strong> on 5-lesson packages &nbsp;·&nbsp; <strong>Free 15-minute consultation</strong></div>
+
+    <!-- ENGLISH PRICING TABLE -->
+    <div id="pricing-en" class="pricing-table" style="display:none;">
+      <table class="rates-table">
+        <thead>
+          <tr>
+            <th>Lesson Type</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>General English for adults</strong></td>
+            <td>60 PLN / 60 minutes</td>
+          </tr>
+          <tr>
+            <td><strong>English for children and teenagers</strong></td>
+            <td>60 PLN / 60 minutes<br>50 PLN / 45 minutes</td>
+          </tr>
+          <tr>
+            <td><strong>IELTS and Cambridge preparation</strong></td>
+            <td>80 PLN / 60 minutes</td>
+          </tr>
+          <tr>
+            <td><strong>Business English</strong></td>
+            <td>80 PLN / 60 minutes</td>
+          </tr>
+          <tr>
+            <td><strong>Demo lesson</strong></td>
+            <td>20 PLN / 30 minutes</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pricing-note" style="margin-top: 2rem; padding: 1rem; background: rgba(245, 245, 245, 0.8); border-left: 3px solid var(--accent); border-radius: 4px;">
+        <div style="font-weight: 600; margin-bottom: 0.5rem;">Group lessons</div>
+        <ul style="margin: 0; padding-left: 1.5rem; font-size: 0.95rem;">
+          <li><strong>2 students:</strong> the price stays the same and is divided between the two students</li>
+          <li><strong>3 students or more:</strong> 20% is added to the lesson price, and the total cost is then divided between all participants</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="offer-banner" id="offer-pl">🎁 <strong>Bezpłatna konsultacja 15 min</strong> &nbsp;·&nbsp; Zarezerwuj lekcję próbną już dzisiaj!</div>
+    <div class="offer-banner" id="offer-en" style="display:none">🎁 <strong>Free 15-minute consultation</strong> &nbsp;·&nbsp; Book your demo lesson today!</div>
   </div>
 </section>
 
@@ -510,6 +599,10 @@ function setLang(lang, btn) {
   // Reviews CTA
   document.getElementById('review-btn-pl').style.display = lang === 'pl' ? 'inline-flex' : 'none';
   document.getElementById('review-btn-en').style.display = lang === 'en' ? 'inline-flex' : 'none';
+
+  // Pricing tables
+  document.getElementById('pricing-pl').style.display = lang === 'pl' ? 'block' : 'none';
+  document.getElementById('pricing-en').style.display = lang === 'en' ? 'block' : 'none';
 
   // Offer banners
   document.getElementById('offer-pl').style.display = lang === 'pl' ? 'block' : 'none';
